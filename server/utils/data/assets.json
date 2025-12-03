@@ -1,0 +1,7 @@
+[
+  { "id": "AAPL", "symbol": "AAPL", "name": "Apple Inc.", "price": 180.12, "changePct": 0.00 },
+  { "id": "GOOGL", "symbol": "GOOGL", "name": "Alphabet Inc.", "price": 140.55, "changePct": 0.00 },
+  { "id": "MSFT", "symbol": "MSFT", "name": "Microsoft Corp.", "price": 372.33, "changePct": 0.00 },
+  { "id": "BTC", "symbol": "BTC", "name": "Bitcoin", "price": 42000.00, "changePct": 0.00 },
+  { "id": "ETH", "symbol": "ETH", "name": "Ethereum", "price": 2300.00, "changePct": 0.00 }
+]
