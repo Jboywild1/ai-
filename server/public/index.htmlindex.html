@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>InvestX — Sign in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">InvestX</div>
+  </header>
+
+  <main class="container auth-container">
+    <section class="card">
+      <h1>Welcome back</h1>
+      <form id="login-form">
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button type="submit" class="btn primary">Sign in</button>
+      </form>
+      <p class="muted">No account? <a href="#" id="show-signup">Create one</a></p>
+    </section>
+
+    <section class="card" id="signup-card" style="display:none;">
+      <h1>Create account</h1>
+      <form id="signup-form">
+        <label>Name<input type="text" name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button type="submit" class="btn primary">Sign up</button>
+      </form>
+      <p class="muted">Have an account? <a href="#" id="show-login">Sign in</a></p>
+    </section>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script>
+    document.getElementById('show-signup').onclick = (e) => {
+      e.preventDefault();
+      document.getElementById('signup-card').style.display = 'block';
+      document.querySelector('.auth-container .card').style.display = 'none';
+    };
+    document.getElementById('show-login').onclick = (e) => {
+      e.preventDefault();
+      document.getElementById('signup-card').style.display = 'none';
+      document.querySelector('.auth-container .card').style.display = 'block';
+    };
+
+    document.getElementById('login-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const email = form.get('email');
+      const password = form.get('password');
+      const ok = await window.Auth.login(email, password);
+      if (ok) location.href = '/dashboard.html';
+    };
+
+    document.getElementById('signup-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const ok = await window.Auth.signup({
+        name: form.get('name'),
+        email: form.get('email'),
+        password: form.get('password')
+      });
+      if (ok) location.href = '/dashboard.html';
+    };
+  </script>
+</body>
+</html>
