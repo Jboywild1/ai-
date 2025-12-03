@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>InvestX — Transactions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">InvestX</div>
+    <div class="nav-links">
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./assets.html">Assets</a>
+      <a href="./transactions.html" class="active">Transactions</a>
+      <a href="./market.html">Market</a>
+    </div>
+    <button class="btn" id="logout">Log out</button>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Transaction history</h2>
+      <table class="table" id="tx-table">
+        <thead>
+          <tr><th>Time</th><th>Asset</th><th>Side</th><th>Qty</th><th>Price</th><th>Amount</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/transactionsPage.js"></script>
+</body>
+</html>
