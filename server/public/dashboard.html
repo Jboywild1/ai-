@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>InvestX — Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">InvestX</div>
+    <div class="nav-links">
+      <a href="./dashboard.html" class="active">Dashboard</a>
+      <a href="./assets.html">Assets</a>
+      <a href="./transactions.html">Transactions</a>
+      <a href="./market.html">Market</a>
+    </div>
+    <button class="btn" id="logout">Log out</button>
+  </nav>
+
+  <main class="container">
+    <section class="grid two">
+      <div class="card">
+        <h2>Portfolio value</h2>
+        <div id="portfolio-value" class="big-number">—</div>
+        <p class="muted">Cash: <span id="cash">—</span></p>
+      </div>
+      <div class="card">
+        <h2>Performance</h2>
+        <canvas id="perfChart" height="140"></canvas>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Holdings</h2>
+      <table class="table" id="holdings-table">
+        <thead>
+          <tr>
+            <th>Asset</th><th>Qty</th><th>Avg cost</th><th>Price</th><th>Value</th><th>P/L</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>
