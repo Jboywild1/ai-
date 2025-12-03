@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>InvestX — Assets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">InvestX</div>
+    <div class="nav-links">
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./assets.html" class="active">Assets</a>
+      <a href="./transactions.html">Transactions</a>
+      <a href="./market.html">Market</a>
+    </div>
+    <button class="btn" id="logout">Log out</button>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Assets</h2>
+      <table class="table" id="assets-table">
+        <thead>
+          <tr><th>Symbol</th><th>Name</th><th>Price</th><th>Change %</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Place order</h2>
+      <form id="order-form">
+        <label>Asset
+          <select name="assetId" id="asset-select"></select>
+        </label>
+        <label>Side
+          <select name="side">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+          </select>
+        </label>
+        <label>Quantity
+          <input type="number" name="quantity" step="1" min="1" required />
+        </label>
+        <button class="btn primary" type="submit">Submit order</button>
+        <p id="order-msg" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/assetsPage.js"></script>
+</body>
+</html>
